@@ -314,7 +314,7 @@ errorList.addEventListener("click", async (e) => {
   const thumb = e.target.closest(".error-thumb");
   if (thumb) {
     lightboxImg.src = thumb.dataset.full;
-    lightbox.hidden = false;
+    lightbox.classList.add("open");
     return;
   }
 
@@ -334,7 +334,7 @@ errorList.addEventListener("click", async (e) => {
   await loadErrors();
 });
 
-lightbox.addEventListener("click", () => { lightbox.hidden = true; });
+lightbox.addEventListener("click", () => { lightbox.classList.remove("open"); });
 
 // ─────────────────────────────────────────────────────────────
 // Search + filter
